@@ -1,0 +1,28 @@
+<!-- HTML in externe template -->
+<h1>Hello Angular 2</h1>
+<h2>My favorite cities are :</h2>
+<ul class="list-group">
+	<li *ngFor="let city of cities" class="list-group-item">{{ city.id}} - {{ city.name }}</li>
+</ul>
+<hr>
+
+<!-- City toevoegen -->
+<div>
+	<input type="text" class="input-lg" placeholder="City..." #txtCity>
+	<button class="btn btn-success"
+			(click)="addCity(txtCity)">Add
+	</button>
+</div>
+<hr>
+
+<!-- Attribute binding -->
+<button class="btn btn-success" (click)="toggleText()">Toggle text</button>
+<h2 [hidden]="textVisible">I love all these cities!</h2>
+
+<hr>
+
+<!-- Attribute binding - changing background color-->
+<div [style.backgroundColor]="color">
+	<input type="text" class="input-lg" placeholder="Color..." #txtColor>
+	<button class="btn btn-success" (click)="changeColor(txtColor.value)">Change color</button>
+</div>

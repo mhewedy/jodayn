@@ -1,0 +1,31 @@
+<!-- HTML in external template -->
+<h1>Exercise 2 - databinding in different ways</h1>
+<!-- ********************************** -->
+<!-- Properties bound via constructor -->
+<!-- ********************************** -->
+<h3>This is an external template</h3>
+<h3>Properties bound via Constructor: </h3>
+<p>My name is : {{ name }}</p>
+<!-- ********************************** -->
+<!-- Using *ngFor -->
+<!-- ********************************** -->
+<hr>
+<h3>My favorite cities are:</h3>
+<ul>
+    <li *ngFor="let city of cities">{{ city}}</li>
+</ul>
+<hr>
+<!-- ********************************** -->
+<!-- Using *ngIf  -->
+<!-- ********************************** -->
+<h3>Using *ngIf</h3>
+<div *ngIf="cities.length > 3">You have a lot of favorite cities! (over 3)</div>
+
+<!-- ********************************** -->
+<!-- Using a Model (app/shared/city.model.ts) -->
+<!-- ********************************** -->
+<hr>
+<h3>List of cities, using a Model:</h3>
+<ul>
+    <li *ngFor="let city of citiesUsingModel">{{ city.id}} - {{ city.name }}</li>
+</ul>
