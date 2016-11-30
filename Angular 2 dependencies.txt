@@ -1,16 +1,25 @@
 // ***********************
-// Behorende bij de training Angular 2 - (C) 2016 - Peter Kassenaar <info@kassenaar.com>
-
-// Gebruik deze snippets om snel een boilerplate-project samen
-// te stellen voor Angular 2
+// Complements the training Angular 2 - (C) 2016 - Peter Kassenaar <info@kassenaar.com>
+//
+// Use these snippets to quickly compose an Angular 2
+// boilerplate project / simple Hello World
 // ***********************
 
 
+
 // *******************
-// Stap 1. Boilerplate code 
+// Step 0. install NodeJS if necessary
 // *******************
 
-// 1. package.json - in de root van je project
+- open a command line window and type node --version
+- it should respond with a version number equal, or higher than v4. (version 0.10-0.12 is NOT OK)
+- if not: go to https://nodejs.org/en/ and install the version for your platform (Mac, Windows or Linux)
+
+// *******************
+// Step 1. Boilerplate code 
+// *******************
+
+// 1. package.json - inside de rootfolder of your app 
 {
   "name"           : "ng2-base",
   "version"        : "1.0.0",
@@ -51,7 +60,7 @@
 }
 
 
-// 2. tsconfig.json - in de root van je project.
+// 2. tsconfig.json - inside de root of your project.
 {
   "compilerOptions": {
 	"target"                : "es5",
@@ -66,7 +75,7 @@
 }
 
 
-// 3. typings.json - in de root van je project
+// 3. typings.json - inside the root of your project
 {
   "globalDependencies": {
 	"core-js": "registry:dt/core-js#0.0.0+20160725163759",
@@ -76,7 +85,7 @@
 }
 
 
-// 4. systemjs.config.js - in de root van je project
+// 4. systemjs.config.js - inside the root of your project
 /**
  * System configuration for Angular 2 samples
  * Adjust as necessary for your application needs.
@@ -125,10 +134,10 @@
 
 
 // *******************
-// Stap 2. Component maken 
+// Step 2. Create Component 
 // *******************
 
-// 5. Component maken - app/app.component.ts
+// 5. Create a new Component file - app/app.component.ts
 import {Component} from '@angular/core';
 
 @Component({
@@ -136,7 +145,7 @@ import {Component} from '@angular/core';
 	selector: 'hello-world',
 	template: `
 		<h1>Hello World!</h1>
-		<h2>Dit is Angular 2</h2>
+		<h2>This is Angular 2</h2>
 	`
 })
 
@@ -145,7 +154,7 @@ export class AppComponent {
 }
 
 // *******************
-// Stap 3. Module schrijven
+// Step 3. Write Module 
 // app/app.module.ts
 // *******************
 // Angular Modules
@@ -166,7 +175,7 @@ export class AppModule {
 
 
 // *******************
-// Stap 4. Bootstrapper schrijven 
+// Step 4. Write Bootstrapper 
 // app/main.ts
 // *******************
 
@@ -182,9 +191,9 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
 
 // *******************
-// Stap 5. Index.html schrijven 
+// Step 5. Write Index.html 
 // *******************
-// 7. Index.html - in root van je project. In de header:
+// 7. Index.html - in the root of your project. In the header:
 <html>
 <head>
     <title>Angular 2 Base Project</title>
@@ -210,12 +219,12 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 </head>
 
 
-// 8. Inhoud van index.html - in de <body>
+// 8. Content of index.html - in de <body>
 <!-- 4. Load the application -->
 <body>
 <div class="container">
     <hello-world>
-        Bezig met laden...
+        Loading ...
     </hello-world>
 </div>
 </body>
@@ -223,9 +232,9 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
 
 // *******************
-// Stap 6. Testen of alles werkt. 
+// Step 6. Putting it all together: Testen if it works
 // *******************
 
-// 9. App draaien - in command line window
+// 9. Run your App - in command line window
 
 npm start
