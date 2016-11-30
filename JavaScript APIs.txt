@@ -1,26 +1,19 @@
 
-// HIER eerst registreren voor API Key
-http://developer.marvel.com/  - Marvel comics
-https://www.rijksmuseum.nl/nl/api - Rijksmuseum
-https://www.themoviedb.org/documentation/api - The Movie Database
-http://www.last.fm/api - Last FM - artiesten- & muziekinformatie
-https://developers.google.com/youtube/v3/ - YouTube - custom YouTube features
-https://addb.absolutdrinks.com/docs/ - Eigen drankjes mixen, na sign-up
-http://openbeerdatabase.com/ - Open beer database (deels open toegankelijk)
-https://freemusicarchive.org/api - informatie over ('open source') songs & artiesten
+// Several open API's, available without registration or 
+// authentication (though it often is possible for more advanced users)
 
-
-// DEZE API's zijn open, zonder registratie beschikbaar (registratie aanvullend vaak wel mogelijk)
-https://api.spotify.com/v1/search?type=track&query= + artistname
-https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken= + kenteken
+https://api.spotify.com/v1/search?type=track&query= + artistname - The Spotify API
 http://swapi.co/ - The Star Wars API
-http://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402b65394b034e52aa2af&q=' + city  - Open weathermap
+http://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402b65394b034e52aa2af&q=' + city  - Open weathermap with weather data
 http://ergast.com/mrd/ - Ergast Motor (Formule 1) API
-http://api.yindo.com/api/book/new/10 - 10 nieuwste Yindo-boeken
 http://www.filltext.com/ - random user data
 http://omdbapi.com/ - Open Movie Database
 https://api.github.com/users/ - GitHub user information.
-http://dev.markitondemand.com/Api/v2/Quote?symbol=AAPL  - Aandelen/stock quote information
-http://restcountries.eu/ - Informatie over landen ter wereld.
-http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json - Postcode Data
+http://dev.markitondemand.com/Api/v2/Quote?symbol=AAPL  - Stock quote information
+http://restcountries.eu/ - All countries in the world.
+http://reqres.in/ - A testing API for (fake) GET/POST/PUT requests
 
+https://github.com/toddmotto/public-apis - Even more API's! 
+
+** INFORMATION PROVIDED "AS IS". USE AT YOUR OWN RISK. **
+** TEACHER OR AGENT CAN NOT BE HELD RESPONSIBLE FOR THE CONTENTS OF THESE API'S **

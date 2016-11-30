@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-md-6">
+		<h1>Movies via service</h1>
+		<img src="../img/frozen.jpg" alt="Frozen poster..." style="width:100px; margin: 10px;">
+		<div>
+			<input type="text" #keyword class="input-lg" placeholder="movie name...">
+			<button class="btn btn-primary" (click)="searchMovies(keyword.value)">Find movies</button>
+			<button class="btn btn-default" (click)="clearMovie()">Clear</button>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<ul class="list-group">
+			<li *ngFor="let movie of movies"
+				class="list-group-item"
+				(click)="setMovie(movie)"
+			>
+				{{ movie.Title}} - {{ movie.Year}}
+			</li>
+		</ul>
+	</div>
+	<div class="col-md-6" *ngIf="currentMovie">
+		<img [src]="currentMovie.Poster" alt="Poster of {{ currentMovie.Title }}" align="left" width="200px">
+		<h2>{{ currentMovie.Title}}</h2>
+		<h2>{{ currentMovie.Year}}</h2>
+		<h2>ID: {{ currentMovie.imdbID}}</h2>
+	</div>
+</div>
