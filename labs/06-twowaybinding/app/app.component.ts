@@ -9,7 +9,7 @@ import {City} from './city.model'
 
 // Class w/ properties
 export class AppComponent {
-	newCityExtended:string = '';
+	newCityExtended:string = 'type here';
 
 	// Properties on the component/class
 	cities:City[]  = [
@@ -23,5 +23,12 @@ export class AppComponent {
 		// console.log(myEvent);
 		// console.log(myEvent.target.value);
 		this.newCityExtended = city.name;
+	}
+	putClassForMe(){
+		return 'input-lg'
+	}
+
+	buttonClicked(){
+		console.log('newCityExtended: '  + this.newCityExtended);
 	}
 }

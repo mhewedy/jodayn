@@ -7,7 +7,8 @@
 <h2>My favorite cities are:</h2>
 <ul class="list-group">
 	<li *ngFor="let city of cities" class="list-group-item"
-		(click)="updateCity(city)">
+		(click)="updateCity(city)"
+		>
 		{{ city.id}} - {{ city.name }}
 	</li>
 </ul>
@@ -15,7 +16,7 @@
 
 <!-- Two-way binding -->
 <h2>Two-way binding</h2>
-<input type="text" class="input-lg"
+<input type="text" [class]="putClassForMe()"
 	   [(ngModel)]="newCity" placeholder="City..."/>
 		<!--Pay attention: import FormsModule in app.module.ts, because ngModel is being used! -->
 <h2>{{ newCity }}</h2>
@@ -27,3 +28,5 @@
 	   (input)="newCityExtended = $event.target.value"
 	   placeholder="Plaatsnaam..."/>
 <h2>{{ newCityExtended }}</h2>
+
+<button (click)="buttonClicked()">print in log</button>
