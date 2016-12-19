@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {City} from './city.model'
 import {CityService} from "./city.service";
+import {Observable} from "rxjs";
 
 @Component({
 	selector   : 'hello-world',
@@ -11,7 +12,8 @@ import {CityService} from "./city.service";
 export class AppComponent implements OnInit {
 	// Properties for component/class
 	currentCity: City;
-	cities: City[];
+	// cities: City[];
+	cities: Observable<City[]>;
 	cityPhoto: string;
 
 	constructor(private cityService: CityService) {
@@ -19,12 +21,15 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.cityService.getCities()
-			.subscribe(cityData => {
-					this.cities = cityData;	// No more need to use .json() here, as results are already mapped inside the service
-				},
-				err => console.log('ERROR: ', err),
-				() => console.log('Getting cities complete'));
+		// this.cityService.getCities()
+		// 	.subscribe(cityData => {
+		// 			// No more need to use .json() here, as results are already mapped inside the service
+		// 			this.cities = cityData;
+		// 		},
+		// 		err => console.log('ERROR: ', err),
+		// 		() => console.log('Getting cities complete'));
+
+		this.cities = this.cityService.getCities();
 	}
 
 	getCity(city: City) {

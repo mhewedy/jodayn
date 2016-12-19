@@ -14,6 +14,6 @@ export class CityService{
     }
 
     getCity(id: number): City {
-        return this.cities.find(c => c.id == id);
+        return this.cities.filter(c => c.id == id)[0];
     }
 }

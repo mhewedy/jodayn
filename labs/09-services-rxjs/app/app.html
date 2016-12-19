@@ -1,7 +1,7 @@
 <h1>Fetching cities async from .json-bestand and mapping the results in the service</h1>
 <h2>My favorite cities are:</h2>
 <ul class="list-group">
-	<li *ngFor="let city of cities"
+	<li *ngFor="let city of cities | async"
 		class="list-group-item"
 		(click)="getCity(city)">
 		{{ city.id}} - {{ city.name }}
