@@ -5,3 +5,4 @@ labs/**/app/**/*.js.map
 
 labs/**/*.d.ts
 typings
+**/*.log

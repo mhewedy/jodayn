@@ -4,7 +4,7 @@ import {City} from './city.model'
 // component with external HTML
 @Component({
 	selector   : 'hello-world',
-	templateUrl: 'app/app.html'
+	templateUrl: 'app/app.component.html'
 })
 
 // Class w/ properties, array w/ cities
@@ -32,7 +32,8 @@ export class AppComponent {
 
 	// 3. Bind to keyUp-event via local template variable
 	betterKeyUp(txtCity) {
-		console.log('You typed: ', txtCity.value);
+		console.log(txtCity);
+		console.log('You typed: ', txtCity);
 		//... do nothing, for now
 	}
 

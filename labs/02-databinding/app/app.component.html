@@ -27,5 +27,5 @@
 <hr>
 <h3>List of cities, using a Model:</h3>
 <ul>
-    <li *ngFor="let city of citiesUsingModel">{{ city.id}} - {{ city.name }}</li>
+    <li *ngFor="let city of citiesUsingModel" (mouseover)="logValue(tmpValue)" #tmpValue >{{ city.id}} - {{ city.name }}</li>
 </ul>

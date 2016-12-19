@@ -1,0 +1,37 @@
+<!-- HTML in external template -->
+<h1>Hello Angular 2</h1>
+<h2>My favorite cities are :</h2>
+<ul class="list-group">
+	<li *ngFor="let city of cities" class="list-group-item">
+
+		<div *ngIf="editCityId == city.id">
+			<input type="text" value="{{city.name}}" #cityName />
+			<button (click)="save(city.id, cityName.value)" class="btn btn-primary pull-right" >
+					Save
+			</button>
+		</div>
+		
+		<div *ngIf="editCityId != city.id">
+			{{ city.id}} - {{ city.name }}
+			<button (click)="edit(city.id)" class="btn btn-success pull-right" >
+					Edit
+			</button>
+			<button (click)="deleteCity(city)" class="btn btn-danger pull-right" >
+				Delete
+			</button>
+		</div>
+	</li>
+</ul>
+<hr>
+
+<hr>
+
+<!-- 2. Add and remove cities from array -->
+<h2>Add new city</h2>
+<div>
+	<input type="text" class="input-lg" placeholder="Plaatsnaam..." #txtCity>
+	<button class="btn btn-success"
+			(click)="addCity(txtCity)">Add
+	</button>
+</div>
+<hr>

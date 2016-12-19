@@ -3,19 +3,20 @@ import {Component, OnInit} from '@angular/core';
 @Component({
     // 1. add component description/annotations here
     selector: 'hello-world',
-    template: `
-		<h1>Hello World!</h1>
-		<h2>This is Angular 2</h2>
-		<a href="http://angular.io" target="_blank">Angular Website</a>
-	`
+    templateUrl: 'app/app.html' 
 })
 
 export class AppComponent implements OnInit {
-    // optional: add constructor, class logic, etc. here
+    
+    name: string
+    cities: string[]
+
     constructor() {
     }
 
     ngOnInit() {
+        this.name = 'abdullah'
+        this.cities = ['Cairo', 'Riyadh']
         console.log('Hello World - Angular 2 is running')
     }
 }

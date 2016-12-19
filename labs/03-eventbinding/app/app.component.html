@@ -10,16 +10,14 @@
 
 <!-- 1. Event binding for a button -->
 <h2>Event binding : mouse and touch</h2>
-<button class="btn btn-success"
-		(click)="btnClick()">I am a button
+<button class="btn btn-success" (click)="btnClick()">I am a button
 </button>
 <hr>
 
 <!-- 2. Event binding for keyboard, use $event -->
 <h2>Event binding : keyboard</h2>
 <div>
-	<input type="text" class="input-lg" placeholder="City..."
-		   (keyup)="onKeyUp($event)">
+	<input type="text" class="input-lg" placeholder="City..." (keyup)="onKeyUp($event)">
 	<h3>{{ txtKeyUp}}</h3>
 </div>
 <hr>
@@ -27,8 +25,7 @@
 <!-- 3. Alternative event binding, using a local template variabele -->
 <h2>Alternative event binding : local template variable</h2>
 <div>
-	<input type="text" class="input-lg" placeholder="City..."
-		   #txtCity (keyup)="betterKeyUp(txtCity)">
+	<input type="text" class="input-lg" placeholder="City..." #txtCity (keyup)="betterKeyUp(txtCity)">
 	<h3>{{ txtCity.value }}</h3>
 </div>
 
@@ -37,8 +34,8 @@
 <!-- 4. Adding numbers using a textbox  -->
 <h2>Adding numbers using a local template variable</h2>
 <div>
-	<input type="text" class="input-lg" placeholder="Type a number..."
-		   #txtNumber>
+	<input type="text" class="input-lg" placeholder="Type a number..." 
+		#txtNumber>
 	<button class="btn btn-success"
 			(click)="addTotal(txtNumber.value)">Add number
 	</button>

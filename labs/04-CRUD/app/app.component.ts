@@ -4,11 +4,12 @@ import {City} from './city.model'
 // component with external HTML
 @Component({
 	selector   : 'hello-world',
-	templateUrl: 'app/app.html'
+	templateUrl: 'app/app.component.html'
 })
 
 // Class w/ properties, array w/ cities
 export class AppComponent {
+	editCityId: number= 0;
 	// Properties
 	cities = [
 		new City(1, 'Groningen', 'Groningen'),
@@ -34,5 +35,18 @@ export class AppComponent {
 		if (position > -1) {
 			this.cities.splice(position, 1)
 		}
+	}
+
+	edit(id: number){
+		this.editCityId = id;
+		console.log('editing city: ' + id)
+	}
+
+	save(id, cityName){
+		this.editCityId = 0;
+		console.log(id, cityName);
+
+		let foundCity: City[] = this.cities.filter(c => id == c.id ? c : null);
+		foundCity[0].name = cityName;
 	}
 }
