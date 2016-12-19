@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {City} from './city.model'
 import {CityService} from "./city.service";
 
+// may use Barrel to organize import
+
 @Component({
 	selector   : 'hello-world',
 	templateUrl: 'app/app.html',
@@ -16,7 +18,6 @@ export class AppComponent implements OnInit {
 	cityPhoto: string;
 
 	constructor(private cityService: CityService) {
-
 	}
 
 	ngOnInit() {
