@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import  {City} from './city.model'
 
-@Injectable()
+// @Injectable()
 export class CityService {
 	private cities: City[] = [
 		new City(1, 'Groningen', 'Groningen'),
