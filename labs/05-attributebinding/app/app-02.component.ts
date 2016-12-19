@@ -6,21 +6,14 @@ import {City} from './city.model'
 @Component({
 	selector   : 'hello-world',
 	templateUrl: 'app/app-02.html',
-	styles     : [`
-		.cityPhoto {
-			max-width : 300px;
-			border : 1px solid #333;
-			padding : 10px;
-			border-radius : 10px;
-		}
-	`]
+	styleUrls: ['app/app-02.css']
 })
 
 // Class met properties, array met cities
 export class AppComponent2 {
 	// Properties voor de component/class
 	name:string         = 'Peter Kassenaar';
-	cities:City[]       = [
+	cities: Array<City>       = [
 		new City(1, 'Groningen', 'Groningen'),
 		new City(2, 'Hengelo', 'Overijssel'),
 		new City(3, 'Den Haag', 'Zuid-Holland'),
@@ -29,10 +22,12 @@ export class AppComponent2 {
 	textVisible:boolean = true;
 	currentCity:City    = null;
 	cityPhoto:string    = '';
+	photoTitle: string = '';
 
 	// Geselecteerde city updaten in de ui. Nieuw : ES6 String interpolation
-	updateCity(city:City) {
+	showCityImage(city:City) {
 		this.currentCity = city;
 		this.cityPhoto   = `img/${this.currentCity.name}.jpg`;
+		this.photoTitle = `قل مرحبا ل: ${this.currentCity.name}`;
 	}
 }
