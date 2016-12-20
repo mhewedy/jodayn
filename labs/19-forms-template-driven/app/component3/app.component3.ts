@@ -14,4 +14,8 @@ export class AppComponent3 implements OnInit {
 		this.myLastName = 'Default Value (coming from component): Kassenaar';
 	}
 
+	submit(form){
+		console.log(form.value.customer);
+	}
+
 }

@@ -1,9 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators, AbstractControl, FormControl} from '@angular/forms';
+
+import 'rxjs/add/operator/delay'
 
 //********************
 // Example 1. Function to match passwords
 //********************
+// used in group level
 function passwordMatcher(control: AbstractControl) {
 	return control.get('password').value === control.get('confirm').value
 		? null : {'nomatch': true};
@@ -13,11 +16,15 @@ function passwordMatcher(control: AbstractControl) {
 //********************
 // Example 2: Function to validate email
 //********************
+// email validator (function that extends ValidatorFn typescript interface)
+// so it can be passed to Validators.compose
 function validateEmail(control: AbstractControl) {
-	let email = control.get('email').value;
+	console.log('in email validator');
+	let email = control.value;	// no longer need control.get('email')
 	let re    = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	return re.test(email)
-		? null : {'no valid email': true};
+	
+	// return !re.test(email) ? {"invalidFormat": true} : {"invalidFormat": false};
+	return !re.test(email) ? {"invalidFormat": true} : null;
 }
 
 //********************
@@ -50,7 +57,7 @@ export class AppComponent2 implements OnInit {
 	ngOnInit() {
 		// 1. Define the model of Reactive Form.
 		this.myReactiveForm = this.formBuilder.group({
-			email   : ['', Validators.required],
+			email   : ['', Validators.compose([Validators.required, validateEmail])],
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
 			confirm : ['', Validators.compose([Validators.required, Validators.minLength(6)])],
 			customer: this.formBuilder.group({
@@ -59,6 +66,13 @@ export class AppComponent2 implements OnInit {
 				lastName : ``
 			})
 		}, {validator: passwordMatcher}); // pass in the validator function
+
+
+		this.myReactiveForm.get("email").valueChanges
+		.delay(1000)
+		.subscribe(o => {
+			console.log('o: ', o);
+		})
 	}
 
 	onSubmit() {

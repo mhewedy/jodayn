@@ -7,8 +7,8 @@
 				<label for="inputEmail">Email address</label>
 				<pre>value: {{ email.value }} - valid : {{ email.valid}}</pre>
 				<input type="email" class="form-control" id="inputEmail"
-					   placeholder="Enter email" name="email" ngModel
-					   #email="ngModel" required>
+					   placeholder="Enter email (numbers only)" name="email" ngModel
+					   #email="ngModel" required pattern="[0-9]*">
 				<small class="form-text text-muted">
 					We'll never share your email with anyone else.
 				</small>
@@ -16,6 +16,7 @@
 			<div class="form-group">
 				<label for="inputPassword">Password</label>
 				<pre>value: {{ pw.value }} - valid : {{ pw.valid}}</pre>
+				<pre>value: {{ myForm.value.password }}</pre>
 				<input type="password" class="form-control" ngModel
 					   id="inputPassword" placeholder="Password" name="password"
 					   #pw="ngModel" required>
