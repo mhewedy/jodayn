@@ -18,7 +18,7 @@ export class GithubSearchComponent {
     searchUsers(username: string){
         this.githubService.searchUsers(username)
             .subscribe(
-                items => {this.items = items}
+                items => this.items = items
                 , err => console.log('error')
                 , () => console.log('completed'));
             
